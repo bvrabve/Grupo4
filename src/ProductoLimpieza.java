@@ -1,7 +1,7 @@
 public class ProductoLimpieza extends Producto{
     private String tipoUso;
 
-    public ProductoLimpieza(String tipoUso){
+    public ProductoLimpieza(int codigo, String tipoUso, double nombre, String precio) {
         super(codigo, nombre, precio);
         this.tipoUso = tipoUso;
     }

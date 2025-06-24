@@ -2,12 +2,12 @@ import java.util.List;
 
 public abstract class Producto {
 
-    protected String codigo;
+    protected int codigo;
     protected String nombre;
     protected double precio;
-    protected List<Producto> productos;
+    protected static List<Producto> productos;
 
-public Producto(String codigo, String nombre, double precio) {
+public Producto(int codigo, String nombre, double precio, Producto... productos) {
     this.codigo = codigo;
     this.nombre = nombre;
     this.precio = precio;
@@ -27,8 +27,32 @@ public Producto(String codigo, String nombre, double precio) {
     }
 
     public void ProductoDuplicado(Producto producto) throws ProductoDuplicadoException {
-        if(producto.getCodigo().equals(this.codigo) || (producto.getNombre().equals(this.nombre))) throw new ProductoDuplicadoException("Producto duplicado");
+            if(producto.getCodigo() == this.codigo || producto.getNombre().equals(this.nombre)) throw new ProductoDuplicadoException("Producto duplicado");
+    }
 
+    public static void agregarProducto(Producto nuevo){
+        productos.add(nuevo);
+        System.out.println("Producto agregado correctamente.");
+    }
+
+    public static void mostrarTodos(List<Producto> productos){
+        if (!productos.isEmpty()) {
+            for (Producto producto: productos) {
+                producto.mostrarInformacion();
+            }
+
+        }
+        else{
+            System.out.println("No existen productos agregados");
+        }
+
+    }
+    public static double calcularValorTotalStock(){
+        double total = 0;
+        for (Producto producto: productos) {
+            total += producto.getPrecio();
+        }
+        return total;
     }
 
 
