@@ -21,7 +21,7 @@ public class ProductoLimpieza extends Producto{
     @Override
 
     public void mostrarInformacion(){
-        System.out.println("Tipo del producto: Limpieza");
+        System.out.println("LIMPIEZA - Nombre: " + nombre + ", Precio: " + precio + ", Tipo: " + tipoUso);
     }
 
 
