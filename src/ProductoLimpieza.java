@@ -18,6 +18,11 @@ public class ProductoLimpieza extends Producto{
         this.tipoUso = tipoUso;
     }
 
+    @Override
+
+    public void mostrarInformacion(){
+        System.out.println("LIMPIEZA - Nombre: " + nombre + ", Precio: " + precio + ", Tipo: " + tipoUso);
+    }
 
     @Override
     public void mostrarInformacion() {
