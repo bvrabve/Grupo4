@@ -19,7 +19,8 @@ public class ProductoLimpieza extends Producto{
     }
 
 
+    @Override
+    public void mostrarInformacion() {
 
-
-
+    }
 }
