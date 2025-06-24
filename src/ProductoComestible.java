@@ -9,11 +9,11 @@ public ProductoComestible() {
 
 }
 
-    public Date getFecha() {return fecha;}
-    public void setFecha(Date fecha) {this.fecha = fecha;}
+    public Date getFecha() {return fechaVencimiento;}
+    public void setFecha(Date fecha) {this.fechaVencimiento = fecha;}
 
     @Override
 public void mostrarInformacion(){
-        System.out.println("COMESTIBLE - Nombre: " + nombre + ", Precio: " + precio + ", Vence: " + fecha);
+        System.out.println("COMESTIBLE - Nombre: " + nombre + ", Precio: " + precio + ", Vence: " + fechaVencimiento);
     }
 }
