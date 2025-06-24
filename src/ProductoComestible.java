@@ -1,13 +1,19 @@
 import java.util.Date;
 
 public class ProductoComestible extends Producto {
-    protected Date fecha;
+    protected Date fechaVencimiento;
 
 public ProductoComestible() {
-    fecha = new Date();
+    this.fechaVencimiento = new Date();
     super(codigo, nombre, precio);
+
 }
 
     public Date getFecha() {return fecha;}
     public void setFecha(Date fecha) {this.fecha = fecha;}
+
+    @Override
+public void mostrarInformacion(){
+        System.out.println("COMESTIBLE - Nombre: " + nombre + ", Precio: " + precio + ", Vence: " + fecha);
+    }
 }
